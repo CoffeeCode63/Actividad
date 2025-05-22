@@ -1,0 +1,27 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class AdivinaElNumero {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+        
+        // Generar un número aleatorio entre 1 y 100
+        int numeroSecreto = random.nextInt(100) + 1;
+        int intentos = 0;
+        int numeroAdivinado = 0;
+        
+        System.out.println("Bienvenido al juego 'Adivina el Número'!");
+        System.out.println("He elegido un número entre 1 y 100. ¿Puedes adivinar cuál es?");
+        
+        // Bucle para que el jugador intente adivinar el número
+        while (numeroAdivinado != numeroSecreto) {
+            System.out.print("Introduce tu intento: ");
+            numeroAdivinado = scanner.nextInt();
+            intentos++;
+            
+            if (numeroAdivinado < numeroSecreto) {
+                System.out.println("El número es mayor. Intenta de nuevo.");
+            } else if (numeroAdivinado > numeroSecreto) {
+                System.out.println("El número es menor. Intenta de nuevo.");
+            }
